@@ -31,6 +31,7 @@ class PLTest(TestCase):
     def tearDown(self):
         path = self.pl.image.path
         self.pl.delete()
+        os.remove(path)
         self.failIf(os.path.isfile(path))
         self.s.delete()
 
